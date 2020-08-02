@@ -1,4 +1,11 @@
 Tipos de Mock
-    - Spy
-    - Stub
-    - Fake
+ 
+ Fake: a class that implements an interface but contains fixed data and no logic. 
+ Simply returns "good" or "bad" data depending on the implementation.
+ 
+ Mock: a class that implements an interface and allows the ability to dynamically 
+ set the values to return/exceptions to throw from particular methods and provides 
+ the ability to check if particular methods have been called/not called.
+ 
+ Stub: Like a mock class, except that it doesn't provide the ability to verify 
+ that methods have been called/not called.
