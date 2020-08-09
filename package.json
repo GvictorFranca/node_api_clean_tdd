@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest --passWithNoTests --watch",
+    "test": "jest --passWithNoTests --silent",
+    "test:verbose": "jest --passWithNoTests --noStackTrace",
+    "test:unit": "npm test -- --watch",
     "check": "npm-check -s -u",
     "test:staged": "jest --passWithNoTests"
   },
