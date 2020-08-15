@@ -10,6 +10,11 @@ describe('Account Mongo Repository', () => {
     await MongoHelper.disconnect()
   })
 
+  beforeEach(async () => {
+    const accountColletion = MongoHelper.getColletction('accounts')
+    await accountColletion.deleteMany
+  }) // Evitar poluicao nas tabelas quando rodar os testes
+
   const makeSut = (): AccountMongoRepository => {
     return new AccountMongoRepository()
   }
