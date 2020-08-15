@@ -15,5 +15,15 @@ export const MongoHelper = {
 
   getColletction (name: string): Collection {
     return this.client.db().collection(name)
+  },
+
+  map: (collection: any): any => {
+    const { _id, ...colletionWithoutId } = collection
+    return Object.assign({}, colletionWithoutId, { id: _id })
   }
 }
+
+/* map: Sempre o "id" no mongoDb sera _id,
+  dai a necessidade de fazer uma conversao,e interessante que seja
+  generico pois sera utilizado em outros lugares
+  */
